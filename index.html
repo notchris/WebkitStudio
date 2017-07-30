@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Audio</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- App Start -->
+      
+      <nav class="navbar navbar-toggleable-xl navbar-inverse bg-inverse fixed-top">
+        <a class="navbar-brand" href="#">Audio</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="#">File</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Edit</a></li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-secondary bg-inverse settings" type="button"><i class="fa fa-cog"></i></button>
+          </form>
+        </div>
+      </nav>
+      
+      <div class="properties">
+      <div class="zoom"><input class="form-control" id="slider" type="range" min="1" max="200" value="100"></div>
+        <div v-for="track in tracks">
+          <div :class="{ 'bg-inverse card-inverse': track.active }" v-on:click="select(track)" class="card prop">
+            <div class="card-header">{{ track.label }}</div>
+            <div class="card-block">
+              <div class="btn-group">
+                <button :disabled="!track.active" v-on:click="arm(track)" type="button" v-bind:class="[{ 'btn-danger': track.armed }, {'btn-outline-danger': !track.armed}]" class="btn"><i class="fa fa-circle"></i></button>
+                <button :disabled="!track.active || !track.file" v-on:click="clear(track)" type="button" class="btn btn-secondary"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tracks">
+        <div class="grid"></div>
+        <div v-for="track in tracks">
+          <div v-on:click="select(track)" class="card track">
+            <div class="card-block text-center">
+              <div class="wave" v-bind:id="track.id"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="player">
+        <div class="controls">
+          <button type="button" v-on:click="record" v-bind:class="[{ 'btn-danger': recording }, {'btn-outline-danger': !recording}]" class="btn"><i class="fa fa-circle"></i></button>
+          <button type="button" v-on:click="play" class="btn btn-secondary"><i class="fa fa-play"></i></button>
+        </div>
+        <div class="timeline">
+          <div id="master"></div>
+        </div>
+      </div>
+      <!-- App End -->
+    </div>
+    <script src="js/wave.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/recorder.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

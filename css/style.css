@@ -1,0 +1,119 @@
+body {
+	margin: 56px 0 0 0;
+	font-weight:400;
+	overflow-x:hidden;
+}
+canvas{
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+}
+.card-outline-primary{
+	background:#FFF;
+}
+.wave{
+	height:80px;
+}
+.settings{
+	position:absolute;
+	top:0;
+	right:0;
+	margin:10px 15px 0 0;
+}
+.zoom { background:#EEE; }
+.zoom,.grid{
+	height:20px;
+	width:100%;
+	position:relative;
+}
+
+.zoom > input{
+	padding:0 !important;
+	margin:0 !important;
+	position:absolute;
+	bottom:2px;
+	left:10%;
+	width:80%;
+}
+
+.zoom > input:before{
+	font-family:'FontAwesome';
+	font-size:0.8em;
+	color:#666;
+	content:'';
+	position:absolute;
+	top:0;
+	left:-16px;
+	width:20px;
+	height:20px;
+}
+
+.zoom > input:after{
+	font-family:'FontAwesome';
+	font-size:0.8em;
+	color:#666;
+	content:'';
+	position:absolute;
+	top:0;
+	right:-26px;
+	width:20px;
+	height:20px;
+}
+
+.grid > timeline{
+	position:absolute !important;
+	bottom:0;
+	left:0;
+}
+
+.track,.prop{
+	height:130px;
+	border-radius:0 !important;
+}
+.track .card-block{
+	padding:0 !important;
+}
+.track{
+	border-bottom:0px !important;
+	border-left:0px !important;
+}
+.prop{
+	border-bottom:0px !important;
+}
+.card{
+	cursor:pointer;
+}
+.player{
+	position:fixed;
+	bottom:0;
+	left:0;
+	background:#292b2c;
+	width:100%;
+	height:100px;
+}
+.properties{
+	width:200px;
+	height:100%;
+	float:left;
+	white-space:nowrap;
+}
+.tracks{
+	width:calc(100% - 200px);
+	overflow-x:scroll;
+	height:100%;
+	float:left;
+	margin-bottom:100px;
+}
+.controls{
+	width:200px;
+	height:100%;
+	float:left;
+}
+.timeline{
+	width:calc(100% - 200px);
+	height:100px;
+	float:left;
+}
+
+#master{
+	visibility:hidden;
+}
