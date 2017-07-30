@@ -1,6 +1,8 @@
 # WebkitStudio
 A simple recording app with Webkit, vue.js, recorder.js & wavesurfer.js
 
+https://i.imgur.com/N6KyeLZ.png
+
 # Recording
 
 Select and 'Arm' a track for recording. Then click the gobal record button to begin capturing audio.
