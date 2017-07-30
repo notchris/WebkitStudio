@@ -1,7 +1,7 @@
 # WebkitStudio
 A simple recording app with Webkit, vue.js, recorder.js & wavesurfer.js
 
-[[https://i.imgur.com/N6KyeLZ.png]]
+Screenshot: https://i.imgur.com/N6KyeLZ.png
 
 # Recording
 
